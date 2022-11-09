@@ -8,18 +8,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 <div class="jumbotron text-center">
-    <h1>Welcome to my webpage</h1>
+    <div class="p-3 mb-2 bg-info text-white">
+        <h1>Welcome to my webpage</h1>
+    </div>
 </div>
 
 <body>
 
-<div class="w3-container w3-blue">
-    <h2>What's your github user?</h2>
+<div class="container">
+    <h2 class="text-center text-primary" >What's your github user?</h2>
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4">
+            <div class="input-group">
+                <input type="text" id="fname" name="fname" class="form-control" placeholder="Github id"><br>
+            </div>
+        </div>
+    </div>
 </div>
 
-<input type="text" id="fname" name="fname"><br>
+
 
 <script>
     $('#fname').keypress(function(event){
@@ -30,10 +40,9 @@
                 url: 'https://api.github.com/users/'+ $("#fname").val() +'/repos',
                 data: { get_param: 'value' },
                 success: function (data) {
-                    alert(JSON.stringify(data[0].name));
                     i=0;
                     while (i<data.length){
-                        $("#body").append('<tr><td>'+data[i].name+'</td><td>'+data[i].description+'</td><td>'+data[i].star+'</td></tr>');
+                        $("#body").append('<tr><td>'+data[i].name+'</td><td>'+data[i].description+'</td><td>'+data[i].stargazers_count+'</td></tr>');
                         i=i+1;
                     }
                 }
