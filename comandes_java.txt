@@ -1,0 +1,29 @@
+mkdir prueba-dsa
+cd pruueba-dsa/
+git init
+vi a.txt --> escrius/esc/:wq
+git status
+git add a.txt --> archivos dentri del commit (contrario=rm)
+git status
+git commit --> cada commit es un punto, añades texto explicando lo que has canviado en ese último commit
+git push
+
+git commit -m "añador ficheros"
+
+
+com descarregar coses i treure que sigui d'una altre persona:
+git clone "link"
+entro swagger
+entro a la carpeta i borro el .git
+obrir desde intelij apretant carpeta totalment externa
+entrar al git i crear un repositori
+git init
+git remote add origin https://github.com/GPurti/Minim_1.git
+git branch -M main
+git add .
+git commit -m "First commit"
+git push -u origin main
+
+pom-->boto dret-->maven-->reload project
+
+http://localhost:8080/swagger/
